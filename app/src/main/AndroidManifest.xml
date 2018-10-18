@@ -27,6 +27,7 @@
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="face" />
         <activity android:name=".LivePreviewActivity" android:exported="true">
+
         </activity>
     </application>
 
