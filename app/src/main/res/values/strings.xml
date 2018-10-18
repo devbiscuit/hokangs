@@ -8,4 +8,7 @@
     <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
     <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
     <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="txt_nfc_room_key">NFC ROOM KEY</string>
+    <string name="txt_desc_room_key">The Ritz-Carlton New York의\n 체크인이 완료되었습니다.</string>
+    <string name="txt_room_num">Room Num.3002</string>
 </resources>

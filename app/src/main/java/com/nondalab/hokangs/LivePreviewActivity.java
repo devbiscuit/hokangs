@@ -14,16 +14,20 @@
 package com.nondalab.hokangs;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityCompat.OnRequestPermissionsResultCallback;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.RelativeLayout;
 import android.widget.ToggleButton;
 
 import com.google.android.gms.common.annotation.KeepName;
@@ -53,6 +57,9 @@ public final class LivePreviewActivity extends AppCompatActivity
     private GraphicOverlay graphicOverlay;
     private String selectedModel = FACE_DETECTION;
 
+    private RelativeLayout mLoadingLayout;
+    private boolean stop = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +75,9 @@ public final class LivePreviewActivity extends AppCompatActivity
         if (graphicOverlay == null) {
             Log.d(TAG, "graphicOverlay is null");
         }
+
+        mLoadingLayout = findViewById(R.id.loading_layout);
+        mLoadingLayout.setVisibility(View.GONE);
 
         ToggleButton facingSwitch = (ToggleButton) findViewById(R.id.facingSwitch);
         facingSwitch.setOnCheckedChangeListener(this);
@@ -105,7 +115,19 @@ public final class LivePreviewActivity extends AppCompatActivity
         switch (model) {
             case FACE_DETECTION:
                 Log.i(TAG, "Using Face Detector Processor");
-                cameraSource.setMachineLearningFrameProcessor(new FaceDetectionProcessor());
+                cameraSource.setMachineLearningFrameProcessor(new FaceDetectionProcessor(()-> {
+                    // face detected dialog
+                    mLoadingLayout.setVisibility(View.VISIBLE);
+                    if(!stop) {
+                        stop = true;
+                        final Handler handler = new Handler();
+                        handler.postDelayed( () -> {
+                            Intent intent = new Intent(this, NFCKeyActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }, 1500);
+                    }
+                }));
                 break;
             default:
                 Log.e(TAG, "Unknown model: " + model);

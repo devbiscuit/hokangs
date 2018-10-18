@@ -16,6 +16,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 }
 
 dependencies {
@@ -31,7 +35,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-ml-common:16.1.5'
     implementation 'com.google.firebase:firebase-ml-vision:18.0.1'
 
+    implementation 'me.zhanghai.android.materialprogressbar:library:1.4.2'
+
+
 }
 
 apply plugin: 'com.google.gms.google-services'
-

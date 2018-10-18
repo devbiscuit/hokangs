@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fireTopLayout"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -37,4 +37,43 @@
           android:textOn=""
           android:checked="false" />
 
+    <RelativeLayout
+        android:id="@+id/loading_layout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#99000000">
+        </View>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+            <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:indeterminate="true"
+                android:id="@+id/progress_circular"
+                style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="체크인 중..."
+                android:fontFamily="@font/notosanskr_thin"
+                android:textSize="22sp"
+                android:layout_below="@+id/progress_circular"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+
+                />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
 </RelativeLayout>
