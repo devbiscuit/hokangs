@@ -18,4 +18,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void actionDoorMode(View view){
+        Intent intent = new Intent(this, NFCReceiveActivity.class);
+        startActivity(intent);
+    }
 }
