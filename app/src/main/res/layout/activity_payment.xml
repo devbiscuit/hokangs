@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background"
+        android:contentDescription="@string/desc_background_image" />
+
+    <View
+        android:id="@+id/view_upper_bar_bg"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        android:background="#a2d0bd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_upper_bar"
+        android:layout_width="40dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        android:background="#ffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAuthorization"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/notosans_thin"
+        android:textColor="@android:color/white"
+        android:text="@string/txt_authorization"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/view_upper_bar" />
+
+
+    <TextView
+        android:id="@+id/textViewWelcomePayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/notosans_thin"
+        android:textColor="@android:color/white"
+        android:text="@string/welcome_to_payment"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/textViewAuthorization" />
+
+    <TextView
+        android:id="@+id/textViewHotelName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/notosanskr_regular"
+        android:textColor="@android:color/white"
+        android:text="@string/hotel_name"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/textViewWelcomePayment" />
+
+
+    <LinearLayout
+        android:id="@+id/view_price_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingBottom="20dp"
+        android:background="@drawable/bg_rounded_rectangle"
+        app:layout_constraintTop_toBottomOf="@id/textViewHotelName"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/textViewRoomType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/notosans_regular"
+                android:textColor="@color/dark_gray"
+                android:text="@string/room_type"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/view_price_bg"
+                app:layout_constraintTop_toTopOf="@id/view_photo_bg"/>
+
+            <TextView
+                android:id="@+id/textViewRoomTypeDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="@font/notosans_thin"
+                android:textColor="@android:color/darker_gray"
+                android:text="@string/room_type_detail"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/view_price_bg"
+                app:layout_constraintTop_toBottomOf="@id/textViewRoomType"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewDeposit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/notosans_regular"
+                android:textColor="@color/dark_gray"
+                android:text="@string/deposit"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/view_price_bg"
+                app:layout_constraintTop_toBottomOf="@id/textViewRoomTypeDetail"/>
+
+
+            <TextView
+                android:id="@+id/textViewDepositDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/notosans_thin"
+                android:textColor="@android:color/darker_gray"
+                android:text="@string/deposit_detail"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/view_price_bg"
+                app:layout_constraintTop_toBottomOf="@id/textViewDeposit"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosans_regular"
+        android:textColor="@android:color/holo_blue_light"
+        android:background="@android:color/white"
+        android:text="@string/txt_btn_payment"
+        android:textSize="20sp"
+        android:onClick="actionPay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

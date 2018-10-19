@@ -12,4 +12,11 @@
     <string name="txt_desc_room_key">The Ritz-Carlton New York의\n 체크인이 완료되었습니다.</string>
     <string name="txt_room_num">Room Num.3002</string>
     <string name="txt_door_mode">Door mode</string>
+    <string name="welcome_to_payment">어서오세요 김벽돌님\n바로 체크인을 도와드릴게요</string>
+    <string name="hotel_name">The Ritz-Carlton New York</string>
+    <string name="room_type">Room Type</string>
+    <string name="room_type_detail">Ocean View\nSweet Room 3002</string>
+    <string name="deposit">Deposit</string>
+    <string name="deposit_detail">400$\n0.32NDT</string>
+    <string name="txt_btn_payment">결제하고 바로 체크인 하기</string>
 </resources>

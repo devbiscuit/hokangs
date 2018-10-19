@@ -33,6 +33,7 @@
         <activity
             android:name=".LivePreviewActivity"
             android:exported="true" />
+        <activity android:name=".PaymentActivity"/>
         <activity android:name=".NFCKeyActivity" />
         <activity android:name=".NFCReceiveActivity">
             <intent-filter>

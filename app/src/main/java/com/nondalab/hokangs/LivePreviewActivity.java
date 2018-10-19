@@ -122,7 +122,7 @@ public final class LivePreviewActivity extends AppCompatActivity
                         stop = true;
                         final Handler handler = new Handler();
                         handler.postDelayed( () -> {
-                            Intent intent = new Intent(this, NFCKeyActivity.class);
+                            Intent intent = new Intent(this, PaymentActivity.class);
                             startActivity(intent);
                             finish();
                         }, 1500);
