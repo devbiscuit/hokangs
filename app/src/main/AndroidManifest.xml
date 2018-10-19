@@ -8,8 +8,10 @@
         android:name="android.hardware.nfc"
         android:required="true" />
 
+    <uses-feature android:name="android.hardware.nfc.hce" android:required="true" />
     <uses-permission android:name="android.permission.NFC" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:allowBackup="true"
@@ -33,15 +35,35 @@
         <activity
             android:name=".LivePreviewActivity"
             android:exported="true" />
-        <activity android:name=".PaymentActivity"/>
+        <activity android:name=".PaymentActivity" />
         <activity android:name=".NFCKeyActivity" />
         <activity android:name=".NFCReceiveActivity">
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
-                <category android:name="android.intent.category.DEFAULT"/>
+
+                <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
+        <activity android:name=".WebviewActivity"></activity>
+
+        <!-- BEGIN_INCLUDE(CardEmulationManifest) -->
+        <!-- Service for handling communication with NFC terminal. -->
+        <service android:name=".hce.CardService"
+            android:exported="true"
+            android:permission="android.permission.BIND_NFC_SERVICE">
+            <!-- Intent filter indicating that we support card emulation. -->
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <!-- Required XML configuration file, listing the AIDs that we are emulating cards
+                 for. This defines what protocols our card emulation service supports. -->
+            <meta-data android:name="android.nfc.cardemulation.host_apdu_service"
+                android:resource="@xml/aid_list"/>
+        </service>
+        <!-- END_INCLUDE(CardEmulationManifest) -->
     </application>
 
 </manifest>

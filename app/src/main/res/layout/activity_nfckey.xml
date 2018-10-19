@@ -106,6 +106,7 @@
         android:text="@string/txt_room_num"
         android:fontFamily="@font/notosanskr_thin"
         android:textSize="30sp"
+        android:onClick="actionOpenDoor"
 
         />
 
