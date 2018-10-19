@@ -18,10 +18,6 @@ public final class PaymentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_payment);
     }
 
-    public void actionAuthentication(View view) {
-        // next
-    }
-
     public void actionPay(View view) {
         Intent intent = new Intent(this, NFCKeyActivity.class);
         startActivity(intent);

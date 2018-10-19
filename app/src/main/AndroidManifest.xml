@@ -47,6 +47,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".WebviewActivity"></activity>
+        <activity android:name=".CheckoutActivity"></activity>
 
         <!-- BEGIN_INCLUDE(CardEmulationManifest) -->
         <!-- Service for handling communication with NFC terminal. -->

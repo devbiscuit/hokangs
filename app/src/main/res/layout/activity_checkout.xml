@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckoutActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background"
+        android:contentDescription="@string/desc_background_image" />
+
+    <View
+        android:id="@+id/view_upper_bar_bg"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        android:background="#a2d0bd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_upper_bar"
+        android:layout_width="40dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        android:background="#ffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAuthorization"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/notosans_thin"
+        android:textColor="@android:color/white"
+        android:text="@string/txt_authorization"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/view_upper_bar" />
+
+    <TextView
+        android:id="@+id/textViewWelcomePayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/notosans_thin"
+        android:textColor="@android:color/white"
+        android:text="@string/welcome"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/textViewAuthorization" />
+
+    <LinearLayout
+        android:id="@+id/fullView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="50dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <RelativeLayout
+            android:id="@+id/amount_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textViewTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosans_regular"
+                android:textColor="@android:color/white"
+                android:text="Total"
+                android:layout_alignStart="@id/amount_full"
+                android:textSize="18sp"
+                />
+
+            <RelativeLayout
+                android:id="@+id/amount_full"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewTotal"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosans_regular"
+                    android:textColor="@android:color/white"
+                    android:text="@string/amount"
+                    android:textSize="30dp"/>
+
+                <TextView
+                    android:id="@+id/unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nonda Coin"
+                    android:textSize="26dp"
+                    android:fontFamily="@font/notosans_thin"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="5dp"
+                    android:layout_toRightOf="@id/amount"
+                    android:layout_alignBaseline="@id/amount" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hotel_name_2_line"
+        android:layout_marginBottom="80dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/notosans_regular"
+        android:textColor="@android:color/white"
+        android:textSize="23dp"
+        app:layout_constraintBottom_toBottomOf="@id/fullView"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosans_regular"
+        android:textColor="@android:color/holo_blue_light"
+        android:background="@android:color/white"
+        android:text="@string/txt_btn_checkout"
+        android:textSize="20sp"
+        android:onClick="actionCheckout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

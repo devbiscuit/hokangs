@@ -19,4 +19,8 @@
     <string name="deposit">Deposit</string>
     <string name="deposit_detail">400$\n0.32NDT</string>
     <string name="txt_btn_payment">결제하고 바로 체크인 하기</string>
+    <string name="welcome">안녕하세요,\n김벽돌님.</string>
+    <string name="hotel_name_2_line">The Ritz Carlton\nNew York</string>
+    <string name="txt_btn_checkout">카드키 반납하기</string>
+    <string name="amount"><u>160000</u></string>
 </resources>
