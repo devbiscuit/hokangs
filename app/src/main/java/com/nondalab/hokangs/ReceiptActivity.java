@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-public class CheckoutActivity extends AppCompatActivity {
+public class ReceiptActivity extends AppCompatActivity {
     private static final String TAG = "CheckoutActivity";
 
     @Override
@@ -14,12 +14,10 @@ public class CheckoutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate");
 
-        setContentView(R.layout.activity_checkout);
+        setContentView(R.layout.activity_receipt);
     }
 
-    public void actionCheckout(View view) {
-        Intent intent = new Intent(this, ReceiptActivity.class);
-        startActivity(intent);
+    public void actionOk(View view) {
         finish();
     }
 }

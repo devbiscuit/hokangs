@@ -22,5 +22,7 @@
     <string name="welcome">안녕하세요,\n김벽돌님.</string>
     <string name="hotel_name_2_line">The Ritz Carlton\nNew York</string>
     <string name="txt_btn_checkout">카드키 반납하기</string>
-    <string name="amount"><u>160,000</u></string>
+    <string name="amount"><u>654,000</u></string>
+    <string name="amount_after_checkout"><u>554,000</u></string>
+    <string name="receipt_detail">Room Service\t\t\t-9,400 NDC\n\nMini Bar\t\t\t-600 NDC\n\nNonda\'s Drink\t\t\t-0 NDC</string>
 </resources>

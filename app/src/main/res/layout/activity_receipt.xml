@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReceiptActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background"
+        android:contentDescription="@string/desc_background_image" />
+
+    <View
+        android:id="@+id/view_upper_bar_bg"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        android:background="#a2d0bd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_upper_bar"
+        android:layout_width="40dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        android:background="#ffff"
+        app:layout_constraintEnd_toEndOf="@id/view_upper_bar_bg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAuthorization"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/notosans_thin"
+        android:textColor="@android:color/white"
+        android:text="@string/txt_authorization"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/view_upper_bar" />
+
+
+    <TextView
+        android:id="@+id/textViewWelcomePayment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/notosans_thin"
+        android:textColor="@android:color/white"
+        android:text="안녕히가세요!\n김벽돌님.\n디파짓은 안전하게\n결제되었습니다."
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/textViewAuthorization" />
+
+    <LinearLayout
+        android:id="@+id/hotel_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewWelcomePayment"
+        >
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/hotelname"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintTop_toBottomOf="@id/textViewWelcomePayment"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/receipt_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/notosans_thin"
+        android:textColor="@android:color/white"
+        android:text="@string/receipt_detail"
+        app:layout_constraintTop_toBottomOf="@id/hotel_name"/>
+
+    <RelativeLayout
+        android:id="@+id/amount_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/receipt_detail"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textViewTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosans_regular"
+            android:textColor="@android:color/white"
+            android:text="Total"
+            android:layout_alignStart="@id/amount_full"
+            android:textSize="18sp"
+            />
+
+        <RelativeLayout
+            android:id="@+id/amount_full"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewTotal"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosans_regular"
+                android:textColor="@android:color/white"
+                android:text="@string/amount_after_checkout"
+                android:textSize="34dp"/>
+
+            <TextView
+                android:id="@+id/unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nonda Coin"
+                android:textSize="26dp"
+                android:fontFamily="@font/notosans_thin"
+                android:textColor="@android:color/white"
+                android:layout_marginStart="5dp"
+                android:layout_toRightOf="@id/amount"
+                android:layout_alignBaseline="@id/amount" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosans_regular"
+        android:textColor="@android:color/holo_blue_light"
+        android:background="@android:color/white"
+        android:text="확인"
+        android:textSize="20sp"
+        android:onClick="actionOk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
