@@ -110,6 +110,12 @@
 
         />
 
-
+    <View
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="actionSkip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 </android.support.constraint.ConstraintLayout>

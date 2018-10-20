@@ -55,4 +55,10 @@ public class NFCKeyActivity extends AppCompatActivity implements CardKeyEvent.Ca
         startActivity(intent);
     }
 
+    public void actionSkip(View view) {
+        Intent intent = new Intent(this, CheckoutActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
 }

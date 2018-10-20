@@ -1,9 +1,11 @@
 package com.nondalab.hokangs;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -16,6 +18,12 @@ import com.google.firebase.firestore.QuerySnapshot;
 public class WebviewActivity extends AppCompatActivity {
 
     private final String TAG = WebviewActivity.class.getSimpleName();
+
+    public void actionNext(View view) {
+        Intent intent = new Intent(this, CheckoutActivity.class);
+        startActivity(intent);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
