@@ -73,7 +73,7 @@
         android:id="@+id/fullView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="50dp"
+        android:paddingBottom="77dp"
         android:orientation="vertical"
         android:gravity="center_vertical">
 
@@ -134,16 +134,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="92dp">
+        android:paddingBottom="100dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <ImageView
             android:layout_width="200dp"
             android:layout_height="60dp"
-            android:background="@drawable/hotelname"
-            android:scaleType="fitCenter"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            />
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/hotelname"
+            android:scaleType="fitCenter" />
     </RelativeLayout>
 
     <Button
