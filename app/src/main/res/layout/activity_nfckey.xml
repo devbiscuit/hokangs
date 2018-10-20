@@ -110,12 +110,19 @@
 
         />
 
-    <View
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosans_regular"
+        android:textColor="#9b9b9b"
+        android:background="@android:color/white"
+        android:text="체크 아웃하기"
+        android:textSize="20sp"
         android:onClick="actionSkip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>
