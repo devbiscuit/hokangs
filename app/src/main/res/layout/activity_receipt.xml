@@ -98,6 +98,8 @@
         android:layout_marginTop="30dp"
         android:fontFamily="@font/notosans_thin"
         android:textColor="@android:color/white"
+        android:lineHeight="13dp"
+        android:textSize="13dp"
         android:text="@string/receipt_detail"
         app:layout_constraintTop_toBottomOf="@id/hotel_name"/>
 
@@ -128,6 +130,7 @@
             android:id="@+id/amount_full"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
             android:layout_below="@id/textViewTotal"
             android:layout_centerHorizontal="true">
 
