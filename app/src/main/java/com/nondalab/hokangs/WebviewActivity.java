@@ -31,6 +31,8 @@ public class WebviewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_webview);
         WebView webView = findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());
+        WebView.setWebContentsDebuggingEnabled(true);
+        webView.getSettings().setJavaScriptEnabled(true);
 
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
